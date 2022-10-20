@@ -2,14 +2,21 @@
 import styles from '../styles/Layout.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import { server } from '../config'
 
-export default function interests() {
+
+export default function interests({data}) {
   return (
     <div>
-        <h1 className={styles.title}> My interests</h1>
-      <p className={styles.info}> i enjoy playing video games in my free time, i also love to read, code, watch tv shows and spend time with my dog</p>
-
-      <p className={styles.backButton}>  
+        <h1 className={styles.title}> My interests </h1>
+      <div className={styles.info}>
+        <p > I enjoy playing video games in my free time. I also love to </p>
+        <ul>
+        {data.interests.map((item)=> <li> {item} </li>)}
+        </ul>
+      </div>
+      
+      <p className={styles.backButton}> 
         <Link href="/"> 
           <a > Home page
           </a> 
@@ -22,4 +29,15 @@ export default function interests() {
       
     </div>
   )
+}
+
+export const getStaticProps = async () =>{
+  const res = await fetch(`${server}/api/`)
+  const data = await res.json()
+
+  return {
+    props:{
+      data
+    }
+  }
 }

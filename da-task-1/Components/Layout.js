@@ -1,13 +1,26 @@
 import React from 'react'
 import styles from "../styles/Layout.module.css"
-import { Header } from './Header'
+import { Meta } from './Meta'
 export const Layout = ({children}) => {
   return (
-    <div className={styles.container}>
-        <main className={styles.main}>
-            <Header/>
-            {children}
-        </main>
-    </div>
+    <>
+      <Meta/>
+      <div className={styles.container}>
+          <main className={styles.main}>
+              {children}
+          </main>
+      </div>
+    </>
   )
+}
+
+export const getStaticProps = async () =>{
+  const res = await fetch(`${server}/api/`)
+  const data = await res.json()
+
+  return {
+    props:{
+      data
+    }
+  }
 }
