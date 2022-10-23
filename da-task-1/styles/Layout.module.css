@@ -23,6 +23,20 @@
   padding: 2rem 1rem;
 }
 
+.updateForm{
+  padding: 2rem 1rem;
+  display: block;
+  /* margin-bottom: 0.5rem; */
+}
+.inputt{
+  margin: 0.4rem auto;
+  height:35px;
+  width: 300px;
+  font-size:1.1rem;
+  color: black;
+  background-color: white;
+}
+
 .footer {
   display: flex;
   flex: 1;

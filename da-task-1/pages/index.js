@@ -39,20 +39,19 @@ export default function Home({data}) {
           </div>
       </div>
       </main>
-      {/* <Image src="/code1.jpg" alt="" width={400} height={400}></Image> */}
     </div>
   )
 }
-
-export const getStaticProps = async () =>{
-  const res = await fetch(`${server}/api/`)
+export const getServerSideProps = async () => {
+  const res = await fetch(`${server}/api/db/userData`)
   const data = await res.json()
 
   return {
     props:{
-      data
+      data: data.users[0]
     }
   }
 }
+
 
 
