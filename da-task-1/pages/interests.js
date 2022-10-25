@@ -3,11 +3,11 @@ import styles from '../styles/Layout.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import { server } from '../config'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 
-export default function Interests({data}) {
-  const router = useRouter()
+export default function interests({data}) {
+  // const router = useRouter()
 
   const submitBtn = async (e) =>{
     e.preventDefault();
@@ -29,7 +29,7 @@ export default function Interests({data}) {
     console.log("done")
     const result = await res.json()
 
-    router.reload(window.location.pathname)
+    // router.reload(window.location.pathname)
   }
 
   return (
