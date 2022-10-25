@@ -2,11 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 import styles from "../styles/Layout.module.css"
 import { server } from "../config"
-import { useRouter } from "next/router"
+import Router from 'next/router'
 
-export default function About({data}) {
-
-  const router = useRouter()
+export default function about({data}) {
 
   const submitBtn = async (e) =>{
     e.preventDefault();
@@ -28,7 +26,7 @@ export default function About({data}) {
     console.log("done")
     const result = await res.json()
 
-    router.reload(window.location.pathname)
+    Router.reload(window.location.pathname)
   }
 
   return (

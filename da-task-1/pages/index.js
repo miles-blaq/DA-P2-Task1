@@ -30,7 +30,7 @@ export default function Home({data}) {
 
           <div className={styles.card}>
             
-          <Link  href="/About">
+          <Link  href="/about">
             <a> 
             <h2> My story and past experiences</h2>
             <p className={styles.truncate}> {data.information}</p>
