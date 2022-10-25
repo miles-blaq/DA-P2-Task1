@@ -6,7 +6,7 @@ import { server } from '../config'
 import { useRouter } from 'next/router'
 
 
-export default function interests({data}) {
+export default function Interests({data}) {
   const router = useRouter()
 
   const submitBtn = async (e) =>{
@@ -38,7 +38,7 @@ export default function interests({data}) {
       <div className={styles.info}>
         <p > I enjoy playing video games in my free time. I also love to </p>
         <ul>
-        {data.interests.map((item)=> <li> {item} </li>)}
+        {data.interests.map((item, index)=> <li key={index}> {item} </li>)}
         </ul>
       </div>
 

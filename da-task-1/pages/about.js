@@ -4,7 +4,7 @@ import styles from "../styles/Layout.module.css"
 import { server } from "../config"
 import { useRouter } from "next/router"
 
-export default function about({data}) {
+export default function About({data}) {
 
   const router = useRouter()
 
@@ -37,7 +37,7 @@ export default function about({data}) {
         <div className={styles.info}>
           <p> {data.information} </p>
           <ul> Some of my recent work experiences include; 
-            {data.pastExperiences.map((item)=> <li>{item}</li>)}
+            {data.pastExperiences.map((item,index)=> <li key={index}>{item}</li>)}
           </ul>
         </div>
 

@@ -20,7 +20,7 @@ export default function Home({data}) {
          
           
           <div className={styles.card}> 
-          <Link  href="/interests">
+          <Link  href="/Interests">
             <a> 
             <h2>My interests </h2>
               <p className={styles.truncate}> I enjoy playing video games in my free time, i also love to read, code, watch tv shows and spend time with my dog</p>
@@ -30,7 +30,7 @@ export default function Home({data}) {
 
           <div className={styles.card}>
             
-          <Link  href="/about">
+          <Link  href="/About">
             <a> 
             <h2> My story and past experiences</h2>
             <p className={styles.truncate}> {data.information}</p>
